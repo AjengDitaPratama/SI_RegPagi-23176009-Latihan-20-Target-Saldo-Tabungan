@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package targetsaldotabungan;
+package saldotabungan;
 
 /**
  *
@@ -11,23 +11,21 @@ package targetsaldotabungan;
  * Kelas : Sistem Informasi
  * NIM : 23176009
  * Deskripsi program : Program ini berisi program untuk menampilkan
- * target saldo tabungan
+ * saldo tabungan
  */
 import java.text.DecimalFormat;
-public class TargetSaldoTabungan {
+public class SaldoTabungan {
     
     public static void main(String[] args) {
-        double saldoAwal = 3500000;
-        double bungaPerBulan = 8;
-        double saldoTarget = 6000000;
+        double saldoAwal = 2500000;
+        double bungaPerBulan = 15;
+        int lamaBulan = 6;
         
-        DecimalFormat df = new DecimalFormat("#,##0"); // Format untuk menampilkan saldo dalam ribuan
-        int bulan = 0;
+        DecimalFormat df = new DecimalFormat("#,##0"); // Format untuk menampilkan ribuan dengan koma
         
-        while (saldoAwal < saldoTarget) {
-            bulan++;
+        for (int i = 1; i <= lamaBulan; i++) {
             saldoAwal += saldoAwal * (bungaPerBulan / 100);
-            System.out.println("Saldo di bulan ke-" + bulan + " Rp." + df.format(saldoAwal));
+            System.out.println("Saldo di bulan ke-" + i + " Rp." + df.format(saldoAwal));
         }
     }
 }
